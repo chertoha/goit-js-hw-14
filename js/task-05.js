@@ -1,6 +1,9 @@
 const inputField = document.querySelector("#name-input");
 const outputField = document.querySelector("#name-output");
 
-inputField.addEventListener("keydown", (e) => {
-  outputField.textContent = e.target.value;
+const DEFAULT_INPUT_VALUE = "Anonymous";
+
+inputField.addEventListener("input", (e) => {
+  const value = e.target.value;
+  outputField.textContent = value === "" ? DEFAULT_INPUT_VALUE : value;
 });
